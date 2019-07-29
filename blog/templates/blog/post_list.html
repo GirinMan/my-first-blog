@@ -1,31 +1,21 @@
+{% load static %}
 <html>
 	<head>
-		<title>lsjg9909's blog</title>	
+		<title>lsjg9909's blog</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 	</head>
 	<body>
-		<p>Hello, World!</p>
-		<p>
-			<h1>A heading</h1>
-			<h2>A sub-heading</h2>
-			<h3>A sub-sub-heading(Allowed to use level 1~6)</h3>
-
-			<em>text</em>
-			<strong>text</strong>
-			<br />Self-closing tag which cannot use settings
-
-			<a href="http://djangogirls.org">link</a>
-
-			<ul><li>first item</li><li>second item</li></ul>
-			<div>Page section</div>
-
-			{% for post in posts %}
-				<div>
-					<p>published: {{ post.published_date }}</p>
-					<h1><a href="">{{ post.title }}<a></h1>
-					<p>{{ post.text|linebreaksbr }}</p>
-				</div>
-			{% endfor %}
-
-		</p>
+		<div>
+			<h1><a href="/">Girinman's Blog</a></h1>
+		</div>
+		{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
 	</body>
 </html>
